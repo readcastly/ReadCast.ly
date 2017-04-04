@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 //   let requrl = req.params.requrl;
 //   console.log('server.js POST to requrl. l. 14. req.params.url = ', req.params.requrl);
 
-// receive POST req of URL user wants to hear; send GET req to Mercury & receive obj w/ parsed data; send to dbController; (will refactor to pull out routes at least)
+// receive POST req of URL user wants to hear; send GET req to Mercury & receive obj w/ parsed data; send to articlesController.js; (will refactor to pull out routes at least)
 app.post('/requrl', function(req, res) {
   console.log('server.js, POST to /requrl. l. 20: req received. body = ', req.body);
   let requrl = req.body.requrl;
@@ -53,10 +53,22 @@ app.post('/requrl', function(req, res) {
   });
 });
 
-// to test; will update with the actual endpoint in next user story
-app.get('/', function(req, res) {
-  console.log('server.js received GET req at / . Readcastly is on its way to fame & fortune!');
-  res.send('We heard your GET req and the diligent Readcastly hamsters are fast at work. All your wildest dreams will soon come true. Stay tuned for more exciting endpoints coming soon to a Postman near you.');
+// tested this route with an array of all articles currently in db and it worked; sample article below @ testdb
+app.get('/getAll', function(req, res) {
+  // console.log('received GET request to /. Here is test db array: ');
+  // console.log('server.js received GET req at / . Readcastly is on its way to fame & fortune!');
+  // res.send('We heard your GET req and the diligent Readcastly hamsters are fast at work. All your wildest dreams will soon come true. Stay tuned for more exciting endpoints coming soon to a Postman near you.');
+  // res.send(testdb);
+
+  // temporarily sending full db to req to this endpoint, as test to render on FE:
+  console.log('server.js received GET req at / . This obj is contents of Readcastly db!');
+  // var TESTobjToSaveToDB = {url: 'www.testingResToGETwithGetAll.com'};
+  // Articles.create(null, function(library){
+
+  // call getAll w/ user 99 & cb = res.send
+  Articles.getAll(99, function(library) {
+    res.send(library);
+  });
 });
 
 // to test urlParser; will update to add authentication route when we get to that story
@@ -72,24 +84,33 @@ app.get('/', function(req, res) {
 // });
 
 // to test bodyParser for json;
-app.post('/jsonTest', jsonParser, function(req, res) {
-  console.log('server.js l. 28: received POST to /jsonTest. Will read it now...');
-  console.log(req.body);
-  if(req.body === {}) {
-    console.log('server.js l. 30: jsonTest did not get an object to parse');
-    return res.sendStatus(400);
-  }
-  console.log('server.js l. 33: req.body should be an obj. body = ', req.body);
-  res.sendStatus(200);
-});
+// app.post('/jsonTest', jsonParser, function(req, res) {
+//   console.log('server.js l. 28: received POST to /jsonTest. Will read it now...');
+//   console.log(req.body);
+//   if(req.body === {}) {
+//     console.log('server.js l. 30: jsonTest did not get an object to parse');
+//     return res.sendStatus(400);
+//   }
+//   console.log('server.js l. 33: req.body should be an obj. body = ', req.body);
+//   res.sendStatus(200);
+// });
 
-var port = process.env.PORT;
+var port = process.env.PORT || 8080;
 
 app.listen(port, function() {
   console.log("Readcastly server listening intently on port: ", port);
 })
 
 var objBuilder = function(obj,source) {
+//   console.log('source.content = ', source.content);
+  // const stripper = function(html) {
+  //   var tmp = '';
+  //   tmp.innerHTML = html;
+  //   return tmp.textContent || tmp.innerText;
+  // };
+  // var excerpt = stripper(source.content);
+  // console.log('server.js, objBuilder, l 112. testing stripper func. excerpt = ', excerpt);
+
     obj.title = source.title;
     obj.text = source.content;
     obj.author = source.author;
@@ -97,7 +118,8 @@ var objBuilder = function(obj,source) {
     obj.image = source.lead_image_url;
     obj.excerpt = source.excerpt;
     obj.word_count = source.word_count;
-    obj.est_time = source.word_count*2;
+    // obj.est_time = source.word_count*2;
+    obj.est_time = source.word_count / 145; // based on 145 wpm avg. spoken speech
     obj.domain = source.domain;
 }
 

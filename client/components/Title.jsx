@@ -1,6 +1,6 @@
 // Title component
-import React from 'react';
-
-export default function Title(props) {
-	return (<h1 className="title" >{props.title}</h1>);
-}
+// import React from 'react';
+//
+// export default function Title(props) {
+// 	return (<div className="title" >{props.title}</div>);
+// }

@@ -28,9 +28,9 @@ const optionsBuilder = function(url) {
 const articleObjFinisher = function(obj,source) {
   obj.title = source.title;
   obj.text = stripper(source.content);
-  obj.author = source.author || "Information not available";
+  obj.author = source.author || "Dave Winfield" // "Author not available";
   obj.publication_date = source.date_published;
-  obj.image = source.lead_image_url || "https://ca.slack-edge.com/T2SUXDE72-U2T9QJWCE-ea64dc6deeb5-72";
+  obj.image = source.lead_image_url ||   "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT8-E0VKkso9wu60MnVZor7_HqEJIAm8DMB6iJGgFvG1m57WHz0";
   obj.excerpt = source.excerpt;
   obj.word_count = source.word_count;
   obj.est_time = source.word_count / 145; // based on 145 wpm avg. spoken speech

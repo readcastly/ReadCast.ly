@@ -6,7 +6,6 @@ import React from 'react';
 export function Loading(props) {
 	return(
 		<div>
-			<p>Loading...</p>
 			<img className="spinner center-block" src='./../images/spiffygif_46x46.gif' height="42" />
 		</div>
 	);

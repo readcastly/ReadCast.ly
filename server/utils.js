@@ -24,7 +24,96 @@ const domainExtractor = function(url) {
   return url.slice(start,end);
 };
 
+const dbStats = function(dbContents) {
+  console.log('server.utils.js l 28: running dbStats...');
+  var count = 0;
+  var total = 0;
+  var highest = 0;
+  var highestArray = [];
+  var numOfHighestCountsToTrack = 25;
+  var articlesWithUnicode = [];
+  var articlesWithApos = [];
+
+  var avg1 = function(arr) {
+    for(var item of arr) {
+      if(item.text.includes('&#x')) {
+        articlesWithUnicode.push(item["id"]);
+      };
+      if(item.text.includes('&apos')) {
+        articlesWithApos.push(item["id"]);
+      };
+    // console.log('\narticle text = ', item["text"]);
+    // console.log('article word count = ', item["word_count"]);
+      count++;
+      total+= item["word_count"]
+      // console.log('highestArray[highestArray.length-1] = ', highestArray[highestArray.length-1]);
+      if(highestArray[highestArray.length-1] === undefined || item["word_count"] >    highestArray[highestArray.length-1]) {
+        highestArray.push(item["word_count"]);
+        highestArray.sort(function(a, b) {return b-a});
+        if(highestArray.length > numOfHighestCountsToTrack) {
+          highestArray.pop();
+        }
+        highest = highestArray[0];
+      }
+    }
+    console.log('\n\nTotal # words in all articles in db = ', total);
+    console.log('# of articles in db = ', count);
+    console.log('Average word count = ', Math.floor(total / count));
+    console.log('\n', numOfHighestCountsToTrack, ' articles with highest word counts: ', highestArray);
+    console.log('\nArticles w/ unicode in text (by id#): ', articlesWithUnicode);
+    console.log('\nArticles w/ &apos in text (by id#): ', articlesWithApos);
+  };
+  avg1(dbContents);
+
+  var variedAverages = function(arr) {
+    var reduction = function(numOfHighestToSubtract) {
+      // console.log('\n\n# of highest word counts to remove = ', numOfHighestToSubtract);
+      var subArray = highestArray.slice(0, numOfHighestToSubtract);
+      var reduced = subArray.reduce(function(acc, val) {
+        return acc + val;
+      });
+      // console.log('\nReducing # words by: ', reduced);
+      return reduced;
+    }
+
+    for(var z=0; z < arr.length; z++) {
+      var newAvg = Math.floor((total - reduction(arr[z])) / (count - arr[z]));
+      console.log('i.e., the avg. word count if we remove the ', arr[z], ' longest articles = ', newAvg);
+    }
+  }
+  variedAverages([25, 10, 7, 5, 3, 1]) // these are the scenarios to run: # of highest word counts to remove
+};
+
+
+const readcastBuilder = function(articleObj) {
+// placeholder
+  return articleObj.title;
+
+}
+
+const unescapeHtml = function(unsafe) {
+  return unsafe
+    .replace(/&#x22;/g, "\"")
+    .replace(/&#x2013;/g, "–")
+    .replace(/&#x2014;/g, "—")
+    .replace(/&#x2018;/g, "\'")
+    .replace(/&#x2019;/g, "\'")
+    .replace(/&#x2026;/g, "...")
+    .replace(/&#x201C;/g, "\"")
+    .replace(/&#x201D;/g, "\"")
+    .replace(/&#xAD;/g, "-")
+    .replace(/&apos;/g, "\'")
+    .replace(/&#x200A;/g, "–")
+}
+
+
+
+
+
 module.exports = {
   errors: errors,
-  domainExtractor: domainExtractor
+  domainExtractor: domainExtractor,
+  dbStats: dbStats,
+  readcastBuilder: readcastBuilder,
+  unescapeHtml: unescapeHtml
 };

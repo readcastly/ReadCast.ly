@@ -64,6 +64,11 @@
     "striptags": "^3.0.1",
     "twilio": "^2.11.1",
     "webpack": "^2.3.2",
+<<<<<<< HEAD
+=======
+  },
+  "devDependencies": {
+>>>>>>> polled team and moved more to dependencies
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",

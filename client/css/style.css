@@ -1,6 +1,7 @@
 .entire-page {
   background: linear-gradient(#3b356a,#6f6da8);
   padding-top: 90px;
+  background-color: white;
   /*font-family: 'Work Sans', sans-serif;*/
 }
 
@@ -43,6 +44,7 @@ hr {
   /*background: #ad1111;*/
   width: 50%;
 }
+
 
 
 .row {
@@ -122,10 +124,12 @@ hr {
 
 #add-library-input {
   background-color: #e3deeb;
+  border-radius: 4px !important;
 }
 
 #sourceSelect {
   background-color: #e3deeb;
+  border-radius: 50px;
 }
 
 #search-library {
@@ -227,6 +231,7 @@ hr {
 
 #add-library-input, #add-library-btn, #listen-now-btn {
   width: 100%;
+
 }
 
 .modal-content {
@@ -321,8 +326,8 @@ hr {
 
 .logo-carousel img {
   width: auto;
-  height: 120px;
-  max-height: 120px;
+  height: 500px;
+  max-height: 500px;
 }
 
 .right.carousel-control, .left.carousel-control {

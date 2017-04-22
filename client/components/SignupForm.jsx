@@ -122,7 +122,7 @@ class SignupForm extends React.Component {
       return;
     }
     let cleanPhone = this.state.phone.split('').filter(char => validnums[char]);
-    if (cleanPhone.length !== 10 || cleanPhone[0] === '1') {
+    if (cleanPhone.length !== 10 || cleanPhone[0] === '0' || cleanPhone[0] === '1') {
       this.setState({error: 'phone', errormsg: errors.phone});
       return false;
     }

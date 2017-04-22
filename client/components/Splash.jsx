@@ -94,7 +94,7 @@ class Splash extends React.Component {
           <div className="row header-info">
             <div className="col-sm-10 col-sm-offset-1 text-center">
 
-              <h1 className="wow fadeIn">Welcome to Readcast.ly</h1>
+              <h1 className="wow fadeIn">Welcome to ReadCast.ly</h1>
               <br />
               <p className="lead wow fadeIn" data-wow-delay="0.5s">Stream your news articles effortlessly</p>
               <br />
@@ -151,7 +151,7 @@ class Splash extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-sm-8 col-sm-offset-2 text-center margin-30 wow fadeIn" data-wow-delay="0.6s">
-              <h2>Create a Readcast</h2>
+              <h2>Create a ReadCast</h2>
               <p className="lead">Pick an article, drop in the link, relax and listen</p>
             </div>
           </div>
@@ -160,13 +160,13 @@ class Splash extends React.Component {
               <Row>
                 <Carousel data-ride="carousel" interval={2000}>
                   <Carousel.Item className='logo-carousel'>
-                    <img width={900} height={500} alt="900x500" className='logo-carousel img-responsive center-block' src="/images/modalscreenshot.png"/>
+                    <img width={900} height={500} alt="900x500" className='logo-carousel img-responsive center-block' src="/images/modalscreenshot313.png"/>
                   </Carousel.Item>
                   <Carousel.Item className='logo-carousel'>
                     <img width={900} height={500} alt="900x500" className='logo-carousel img-responsive center-block' src="/images/readcast1.png"/>
                   </Carousel.Item>
                   <Carousel.Item className='logo-carousel'>
-                    <img width={900} height={500} alt="900x500" className='logo-carousel img-responsive center-block iphone' src="/images/readcastiphone.png"/>
+                    <img width={900} height={500} alt="900x500" className='logo-carousel img-responsive center-block iphone' src="/images/readcastiphone313.png"/>
                   </Carousel.Item>
                 </Carousel>
               </Row>
@@ -181,17 +181,17 @@ class Splash extends React.Component {
             <div className="col-sm-4 wow fadeIn" data-wow-delay="0.4s">
               <hr className="line purple"/>
               <h3>Hear Your ReadCasts</h3>
-              <p>Drop a URL in the text box or click on 'Add to Library' in the Top stories mode and ReadCastly will read the article to you with its player at the bottom of the screen. Choose from 16 different voices, with global accents. ReadCastly can also give you a link to the readcast - or send it to you via email or text. Have lots of readcasts in your queue? Use the search box to filter your results.</p>
+              <p>Drop a URL in the text box or click on 'Add to Library' in the Top stories mode and ReadCastly will read the article to you with its player at the bottom of the screen. Choose from 16 different voices, with global accents. ReadCastly can also give you a link to the ReadCast - or send it to you via email or text. Have lots of ReadCasts in your queue? Use the search box to filter your results.</p>
             </div>
             <div className="col-sm-4 wow fadeIn" data-wow-delay="0.8s">
               <hr  className="line blue"/>
               <h3>Trending News</h3>
-              <p>Have you used ReadCastly so much that you no longer have a backlog of articles? Just click the Top stories button and choose from hundreds of stories in our list of 70 news sources from a wide variety of genres including technology, news, business, pop culture, sports, the arts and international. Add as many of them to your library as you like, and they will be available to you as readcasts.</p>
+              <p>Have you used ReadCastly so much that you no longer have a backlog of articles? Just click the Top stories button and choose from hundreds of stories in our list of 70 news sources from a wide variety of genres including technology, news, business, pop culture, sports, the arts and international. Add as many of them to your library as you like, and they will be available to you as readCasts.</p>
             </div>
             <div className="col-sm-4 wow fadeIn" data-wow-delay="1.2s">
               <hr  className="line yellow"/>
               <h3>Stream, Text, Email</h3>
-              <p>While you can browse stories in ReadCastly's guest mode and stream readcasts, to get the full experience please register. By providing your email and a password you can save readcasts in your library. If you choose to include a mobile number as well, you will have the option of texting yourself a link to any readcast.</p>
+              <p>While you can browse stories in ReadCastly's guest mode and stream ReadCasts, to get the full experience please register. By providing your email and a password you can save ReadCasts in your library. If you choose to include a mobile number as well, you will have the option of texting yourself a link to any ReadCast.</p>
             </div>
           </div>
         </div>
@@ -202,7 +202,7 @@ class Splash extends React.Component {
           <div className="row margin-40">
             <div className="col-sm-8 col-sm-offset-2 text-center">
               <h2 className="white">Meet the Team</h2>
-              <p className="white">ReadCastly was conceived, architected and built in 4 weeks as the thesis product of four full-stack software engineers at Hack Reactor in New York City. The app converts URLs to natural-language "readcasts" using the artificial intelligence services of Amazon's Polly (advanced deep-learning technologies to synthesize speech).
+              <p className="white">ReadCastly was conceived, architected and built in 4 weeks as the thesis product of four full-stack software engineers at Hack Reactor in New York City. The app converts URLs to natural-language "ReadCasts" using the artificial intelligence services of Amazon's Polly (advanced deep-learning technologies to synthesize speech).
 
 ReadCastly employs 4 APIs to pull data from 70 news sources globally, parse the text, convert to mp3 audio and then store and stream from Amazon S3. Registered users can also choose to receive the audio via URL, email or text message.
 
@@ -223,10 +223,11 @@ The team also wrote custom algorithms to further cleanse the text and ensure a q
               <p className="white"> </p>
               <p className="white"> </p>
               <p className="white"> </p>
-              <p className="white">Andrew Fechner</p>
+              <p className="white">( from l to r )</p>
               <p className="white">Michiya Hibino</p>
-              <p className="white">John Packel</p>
               <p className="white">Viswada Yangala</p>
+              <p className="white">John Packel</p>
+              <p className="white">Andrew Fechner</p>
             </div>
 
           </div>

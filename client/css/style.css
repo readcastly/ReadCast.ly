@@ -15,8 +15,9 @@
   /*font-family: 'Work Sans', sans-serif;*/
 }
 
-body {
+#root {
   background: linear-gradient(#3b356a,#6f6da8);
+  position: absolute;
   top:0;
   left: 0;
   width:100%;
@@ -188,9 +189,9 @@ hr {
   /*width: 100%;*/
 }
 
-.article-title a {
-  font: arial;
-  font-size: 1.75em;
+#article-title {
+  font: arial !important;
+  font-size: 1.75em !important;
   color: #559b9e !important;
 }
 

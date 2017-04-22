@@ -124,20 +124,10 @@ class App extends React.Component {
     })
   }
 
-  // showLogoutButton(){
-  //   render() {
-  //     return (
-  //           <div>
-  //               <input type="submit" value="Search" onClick={this.onClick} />
-  //               { this.state.showResults ? <Results /> : null }
-  //           </div>
-  //       );
-  // }
-
 	addDeliveryMethods(){
-		if ((this.state.user.email || this.state.isGuest) && exportOptions.methods.length<4) {
-    		exportOptions.methods.push({id: "email", method: 'Email It'});
-  	}
+		// if ((this.state.user.email || this.state.isGuest) && exportOptions.methods.length<4) {
+  //   		exportOptions.methods.push({id: "email", method: 'Email It'});
+  // 	}
 		if ((this.state.user.phone || this.state.isGuest) && exportOptions.methods.length<4) {
     		exportOptions.methods.push({id: "phone", method: 'Text It'});
   	}
@@ -335,23 +325,11 @@ class App extends React.Component {
     console.log('GETTING SOURCES')
 		axios.get('https://newsapi.org/v1/sources?language=en')
 			.then((res) => {
-				let options = res.data.sources.filter((source) => source.sortBysAvailable.indexOf("top") !== -1 && source.id !=="financial-times")
+				let options = res.data.sources.filter((source) => source.sortBysAvailable.indexOf("top") !== -1 && source.id !=="financial-times" && source.id !== "associated-press")
 				this.setState({topStoriesSources: options})
 			})
 			.catch ((err) => console.log('ERROR GETTING TOP STORIES SOURCES', err))
 	}
-
-  componentWillMount() {
-    this.getCurrentUser();
-    this.getTopStoriesSources();
-    this.getHeadlines('google-news');
-    this.addDeliveryMethods();
-  }
-
-  // componentDidMount() {
-  //   this.getTopStoriesSources();
-  //   this.getHeadlines('google-news');
-  // }
 
 	toggleView() {
 		let currentState = this.state.topStoryMode;
@@ -414,18 +392,11 @@ class App extends React.Component {
       .catch((err) => console.log('Unable to retrieve headlines', err));
   }
 
-	// componentDidMount() {
-		// this.addDeliveryMethods();
-		// this.getReadingList();
-		// this.getTopStoriesSources();
-		// this.getHeadlines('google-news');
-	// }
-
   onSortEnd ({oldIndex, newIndex}) {
-        this.setState({
-        library: arrayMove(this.state.library, oldIndex, newIndex),
-        });
-   };
+    this.setState({
+    library: arrayMove(this.state.library, oldIndex, newIndex),
+    });
+  };
 
  	popToast() {
  		console.log('POPPING TOAST');
@@ -433,6 +404,13 @@ class App extends React.Component {
    		type: toast.TYPE.SUCCESS
    	})
    };
+
+ componentWillMount() {
+    this.getCurrentUser();
+    this.getTopStoriesSources();
+    this.getHeadlines('google-news');
+    this.addDeliveryMethods();
+  }
 
 	render() {
 		return(
@@ -477,7 +455,7 @@ class App extends React.Component {
             			<Loading type="spin" color="#70cbce" />
           		</div>}
 					</ToggleDisplay>}
-					<ToastContainer autoClose={4000} position="bottom-center" style={{color:"#e3deeb"}}/>
+					<ToastContainer autoClose={4000} position="bottom-center" />
 					{this.state.nowPlaying && <div id="player_container">
 						<Player track={this.state.nowPlaying} hidePlayer={this.hidePlayer.bind(this)} />
 					</div>}

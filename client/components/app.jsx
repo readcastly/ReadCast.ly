@@ -54,7 +54,8 @@ const exportOptions = {
     ],
     methods : [
       {id: "stream", method: 'Stream It'},
-      {id: "link", method: 'Link It'}
+      {id: "link", method: 'Link It'},
+      {id: "email", method: 'Email It'}
     ]
   }
 
@@ -289,6 +290,9 @@ class App extends React.Component {
 			article: articleObject.article
 		};
 		let route = '/'+ articleObject.method; //**************
+		if (articleObject.method === 'stream') {
+			this.setState({nowPlaying: null});
+		}
 		this.setState({lastMethod: articleObject.method, lastUrl: articleObject.article.url, isLoading: true});
 
 		// console.log('FRONT-A->>>EXPORT-OBJ: ', exportObj);  /* MH: DEBUGGING */

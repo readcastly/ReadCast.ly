@@ -17,7 +17,7 @@ class WhichView extends React.Component {
              {this.props.topStoryMode ?
               (<div className="switcher">
                 <Col sm={2} xs={6}>
-                  <Button bsStyle="default" className="already-there" block onClick={this.props.toggleView.bind(this)}>Top stories</Button>
+                  <Button bsStyle="default" className="already-there" block onClick={null}>Top stories</Button>
                 </Col>
                 <Col sm={2} xs={6}>
                   <Button bsStyle="warning" block onClick={this.props.toggleView.bind(this)}>Your readcasts</Button>
@@ -28,7 +28,7 @@ class WhichView extends React.Component {
                   <Button bsStyle="warning" block onClick={this.props.toggleView.bind(this)}>Top stories</Button>
                 </Col>
                 <Col sm={2} xs={6}>
-                  <Button bsStyle="default" className="already-there" block onClick={this.props.toggleView.bind(this)}>Your readcasts</Button>
+                  <Button bsStyle="default" className="already-there" block onClick={null}>Your readcasts</Button>
                 </Col>
                 {this.props.hasLibrary && <FilterBox isLoading={this.props.isLoading} isFiltered={this.props.isFiltered} toggleLoading={this.props.toggleLoading.bind(this)} searchForIt={this.props.searchForIt.bind(this)} showAll={this.props.showAll.bind(this)} />}
                </div>)

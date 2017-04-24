@@ -59,7 +59,7 @@ const exportOptions = {
     ]
   }
 
-let randomId = 10**9;
+let randomId = Math.pow(10,9);
 
 class App extends React.Component {
 	constructor(props) {

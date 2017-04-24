@@ -247,7 +247,7 @@ The team also wrote custom algorithms to further cleanse the text and ensure a q
             <div className="wow fadeInUp" data-wow-delay="1s">
               <br />
                 <div className="wow fadeInUp teamImg" data-wow-delay="1s">
-                  <img className="teamImg" src="images/techStack.png"/>
+                  <img className="teamImg" src="images/ReadCastly tech stack - teal.svg"/>
                 </div>
             </div>
 

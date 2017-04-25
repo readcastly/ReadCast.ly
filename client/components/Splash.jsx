@@ -5,7 +5,7 @@ import { Button, Form, FormControl, FormGroup, ControlLabel, Col, Row, Carousel 
 import { Collapse } from 'react-collapse';
 // import {Grid, Row, Col, FormGroup, FormControl, Button, Carousel} from 'react-bootstrap';
 
-const techLogos = ['../images/amazon-polly.jpg', '../images/Bookshelf.png', '../images/bootstrap-logo.png', '../images/express.png','../images/knex.png', '../images/MySQL-Logo.png', '../images/node-js.png', '../images/nodemailer.png', '../images/Passport.png', '../images/Postlight.png', '../images/react-logo.png', '../images/S3.png', '../images/Twilio_logo.png', '../images/webpack.png']
+// const techLogos = ['../images/amazon-polly.jpg', '../images/Bookshelf.png', '../images/bootstrap-logo.png', '../images/express.png','../images/knex.png', '../images/MySQL-Logo.png', '../images/node-js.png', '../images/nodemailer.png', '../images/Passport.png', '../images/Postlight.png', '../images/react-logo.png', '../images/S3.png', '../images/Twilio_logo.png', '../images/webpack.png']
 
 
 class Splash extends React.Component {
@@ -148,6 +148,7 @@ class Splash extends React.Component {
   				<div className="scroll"></div>
   		</div>
 
+
       <section id="be-the-first" className="pad-xl">
         <div className="container">
           <div className="row">
@@ -160,16 +161,28 @@ class Splash extends React.Component {
           <div className="wow fadeInUp" data-wow-delay="1s">
               <Row>
                 <Carousel data-ride="carousel" interval={2000}>
+
+                <Carousel.Item className='logo-carousel'>
+                  <img width={900} height={500} alt="900x500" className='logo-carousel img-responsive center-block' src="/images/ReadCastly-Top-Stories.png"/>
+                </Carousel.Item>
+
                   <Carousel.Item className='logo-carousel'>
-                    <img width={900} height={500} alt="900x500" className='logo-carousel img-responsive center-block' src="/images/modalscreenshot313.png"/>
+                    <img width={900} height={900} alt="900x500" className='logo-carousel img-responsive center-block' src="/images/ReadCastly-your-readcasts-voices.png"/>
                   </Carousel.Item>
                   <Carousel.Item className='logo-carousel'>
-                    <img width={900} height={500} alt="900x500" className='logo-carousel img-responsive center-block' src="/images/readcast1.png"/>
+                    <img width={900} height={500} alt="900x500" className='logo-carousel img-responsive center-block' src="/images/Readcastly-new-modal.png"/>
                   </Carousel.Item>
                   <Carousel.Item className='logo-carousel'>
-                    <img width={900} height={500} alt="900x500" className='logo-carousel img-responsive center-block iphone' src="/images/readcastiphone313.png"/>
+                    <img width={900} height={500} alt="900x500" className='logo-carousel img-responsive center-block' src="/images/ReadCastly-signup.png"/>
                   </Carousel.Item>
+                  <Carousel.Item className='logo-carousel'>
+                    <img width={900} height={500} alt="900x500" className='logo-carousel img-responsive center-block iphone' src="/images/ReadCastly-mobile.png"/>
+                  </Carousel.Item>
+
+
+
                 </Carousel>
+
               </Row>
           </div>
 
@@ -179,7 +192,9 @@ class Splash extends React.Component {
       <section id="main-info" className="pad-xl">
         <div className="container">
           <div className="row">
+          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
             <div className="col-sm-4 wow fadeIn" data-wow-delay="0.4s">
+
               <hr className="line purple"/>
               <h2>Generate ReadCasts</h2>
               <p>Drop a URL in the text box or click on 'Add to Library' in the Top stories mode and ReadCast.ly will read the article to you with its player at the bottom of the screen. Choose from 16 different voices, with global accents. ReadCast.ly can also give you a link to the ReadCast - or send it to you via email or text. Have lots of ReadCasts in your queue? Use the search box to filter your results.</p>
@@ -216,34 +231,38 @@ class Splash extends React.Component {
             <div className="wow fadeInUp" data-wow-delay="1s">
 
                 <div className="wow fadeInUp teamImg" data-wow-delay="1s">
-                  <img className="teamImg" src="images/team.JPG"/>
+                  <img className="teamImg" src="images/team-big.JPG"/>
                 </div>
             </div>
-
+              <br></br><br></br>
             <div className="wow fadeInUp" className="teamImg" data-wow-delay="1s">
               <p className="white team-name"> </p>
               <p className="white"> </p>
               <p className="white"> </p>
-              <p className="white">( from l to r )</p>
-              <p className="white team-name">Michiya Hibino </p><a href="https://github.com/mhibino"><img height="50" src="./images/GitHub-Mark.png" ></img></a>
+
+              <div className="col-sm-3">
+              <p className="white team-name">Michiya Hibino </p><a href="https://github.com/mhibino"><img height="50" src="./images/github-logo.png" ></img></a>
               <br></ br><br></ br>
-              <p className="white team-name">Viswada Yangala </p><a href="https://github.com/yangalav"><img height="50" src="./images/GitHub-Mark.png" ></img></a>
+              </div>
+              <div className="col-sm-3">
+              <p className="white team-name">Viswada Yangala </p><a  className="icon-space" href="https://github.com/yangalav"><img height="50" src="./images/github-logo.png" ></img></a>
               <a href="https://www.linkedin.com/in/viswadayangala/"><img height="50" src="./images/linkedin-logo.png" ></img></a>
               <br></ br><br></ br>
-              <p className="white team-name">John Packel </p><a href="https://github.com/john-packel"><img height="50" src="./images/GitHub-Mark.png" ></img></a>
-              <a href="www.linkedin.com/in/johnpackel"><img height="50" src="./images/linkedin-logo.png" ></img></a>
+              </div>
+              <div className="col-sm-3">
+              <p className="white team-name">John Packel </p><a className="icon-space" href="https://github.com/john-packel"><img height="50" src="./images/github-logo.png" ></img></a>
+              <a className="icon-space" href="www.linkedin.com/in/johnpackel"><img height="50" src="./images/linkedin-logo.png" ></img></a>
               <a href="https://twitter.com/jpackel"><img height="50" src="./images/twitter-logo.png" ></img></a>
-
               <br></ br><br></ br>
-              <p className="white team-name">Andrew Fechner </p><a href="hhttps://github.com/arfnj"><img height="50" src="./images/GitHub-Mark.png" ></img></a>
+              </div>
+              <div className="col-sm-3">
+              <p className="white team-name">Andrew Fechner </p><a className="icon-space" href="hhttps://github.com/arfnj"><img height="50" src="./images/github-logo.png" ></img></a>
               <a href="https://www.linkedin.com/in/andrew-fechner/"><img height="50" src="./images/linkedin-logo.png" ></img></a>
-
-
-            </div>
-
-          </div>
+              </div>
 
         </div>
+</div>
+</div>
       </section>
 
       <section id="tech" className="pad-lg">
@@ -260,19 +279,26 @@ class Splash extends React.Component {
                 <div className="wow fadeInUp teamImg" data-wow-delay="1s">
                   <h1 className="purple-headline"> ReadCast.ly tech stack</h1><br></br><br></br>
                   <img className="teamImg" src="images/ReadCastly tech stack - teal.svg"/>
+
+
+
                 </div>
+
             </div>
 
           </div>
 
         </div>
-      </section>
 
+      </section>
+<section >
+<h4 className="footer">copyright 2017, The Artic Foxes</h4>
+  </section>
 
     </div>
+
     );
   }
-
 };
 
 // <Grid/>

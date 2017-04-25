@@ -292,7 +292,7 @@ class Splash extends React.Component {
 
       </section>
 <section >
-<h4 className="footer">copyright 2017, The Artic Foxes</h4>
+<h4 className="footer">copyright 2017, The Arctic Foxes</h4>
   </section>
 
     </div>

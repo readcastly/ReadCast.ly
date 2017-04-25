@@ -327,8 +327,8 @@ hr {
 
 .logo-carousel img {
   width: auto;
-  height: 500px;
-  max-height: 500px;
+  height: 600px;
+  max-height: 600px;
 }
 
 .right.carousel-control, .left.carousel-control {
@@ -344,7 +344,10 @@ hr {
   border: 0;
   border-radius: 0 !important;
 }
-
+.purple-headline {
+  color: #6d3f96;
+  font-size: 36;
+}
 
 
 

@@ -12,15 +12,18 @@
    Global styles
    ========================================================================== */
 h1, h2, h3, h4, h5, h6, p, .btn, a, .form-control, .list-inline, small, #pricing {
-  font-family: 'Montserrat', sans-serif;
+  /*font-family: 'Montserrat', sans-serif;*/
+  font-family: 'Dosis', sans-serif;
 }
 
 p, .lead {
 	font-family: 'Raleway', sans-serif;
+  font-size: 36;
+
 }
 
 h1 {
-  font-size: 55px;
+  font-size: 75px;
   line-height: 55px;
   letter-spacing: -1px;
   color: #ffffff;
@@ -30,8 +33,9 @@ h1 {
 h2 {
   font-size: 40px;
   line-height: 40px;
-  etter-spacing: -0.5px;
-  color: #ffffff;
+  letter-spacing: -0.5px;
+  /*color: #ffffff;*/
+  color: #6d3f96;
   font-weight: 700;
 }
 
@@ -44,8 +48,9 @@ h3 {
 }
 
 .lead {
-  font-size: 21px;
+  font-size: 36px;
   line-height: 26px;
+  font-style: italic;
   color: #ffffff;
   font-weight: 400;
 }
@@ -55,6 +60,26 @@ p {
   line-height: 22px;
   color: #929496;
   font-weight: 400;
+}
+
+.team-text {
+  font-size: 22px;
+  line-height: 30px;
+  width: 1200px;
+}
+
+.team-name {
+  font-size: 24px;
+
+}
+
+.icon-space {
+  padding-right: 10px;
+}
+
+.footer {
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 /*------------------Utilities---------------------*/
@@ -157,7 +182,8 @@ a:hover, a:focus {
 
 .customLoginButtonSize {
   width: 200px;
-  height: 30px;
+  height: 32px;
+  vertical-align: middle;
 }
 
 .customFormWidth {
@@ -234,7 +260,6 @@ a:hover, a:focus {
 }
 
 
-
 /* ==========================================================================
    Nav Styles
    ========================================================================== */
@@ -301,13 +326,14 @@ header {
 }
 
 .header-info {
-  position: absolute;
+  /*position: absolute;*/
   bottom: 0;
   width: 100%;
   left: 0;
   right: 0;
   margin-left: 0px;
   margin-bottom: 12%;
+  margin-top: 300px;
 }
 
 .signin {
@@ -319,10 +345,10 @@ header {
     border: 2px solid #fff;
     border-radius: 16px;
     display: block;
-    height: 50px;
+    height: 70px;
     margin: -100px auto 50px;
     position: relative;
-    width: 30px;
+    width: 40px;
     z-index: 10;
 }
 .mouse-icon .scroll {
@@ -336,11 +362,11 @@ header {
 .mouse-icon .scroll {
     background: #fff none repeat scroll 0 0;
     border-radius: 10px;
-    height: 10px;
+    height: 15px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    top: 4px;
+    top: 10px;
     width: 4px;
 }
 @keyframes scrolling {
@@ -363,7 +389,7 @@ header {
 }
 
 .pad-lg {
-	padding: 160px 0px;
+	padding: 20px 20px 80px 0;
 }
 
 .pad-sm {

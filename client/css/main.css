@@ -16,15 +16,9 @@ h1, h2, h3, h4, h5, h6, p, .btn, a, .form-control, .list-inline, small, #pricing
   font-family: 'Dosis', sans-serif;
 }
 
-p, .lead {
-	font-family: 'Raleway', sans-serif;
-  font-size: 36;
-
-}
-
 h1 {
   font-size: 75px;
-  line-height: 55px;
+  line-height: 75px;
   letter-spacing: -1px;
   color: #ffffff;
   font-weight: 700;
@@ -49,7 +43,7 @@ h3 {
 
 .lead {
   font-size: 36px;
-  line-height: 26px;
+  line-height: 36px;
   font-style: italic;
   color: #ffffff;
   font-weight: 400;
@@ -333,7 +327,7 @@ header {
   right: 0;
   margin-left: 0px;
   margin-bottom: 12%;
-  margin-top: 300px;
+  margin-top: 100px;
 }
 
 .signin {

@@ -1,5 +1,8 @@
 // {'APP' component is a stateful, top-level component }
 
+  /* Line 447: trying reverting to before Sortable to test mobile. Was:
+   <SortableList articles={this.state.library} user={this.state.user} */
+
 import React from 'react';
 import axios from 'axios';
 import ToggleDisplay from 'react-toggle-display';
@@ -13,7 +16,8 @@ import HeaderNav from './Navbar.jsx';
 import SignupButton from './SignupButton.jsx';
 import SignUpForm from './SignupForm.jsx';
 import TransFormEr from './TransFormer.jsx';
-import SortableList from './ArticleList.jsx';
+// import SortableList from './ArticleList.jsx';
+import ArticleList from './ArticleList.jsx';
 import ArticleEntry from './ArticleEntry.jsx';
 import TopStories from './TopStories.jsx';
 import Player from './Player.jsx';
@@ -440,7 +444,8 @@ class App extends React.Component {
 									<h3 style={{color: '#e3deeb'}}>Head over to Top Stories mode to grab today's headlines</h3>
 									<h3 style={{color: '#e3deeb'}}>or feed your own links into the form above</h3>
 								</div>}
-							<SortableList articles={this.state.library} user={this.state.user} deleteIt={this.deleteArticle.bind(this)} convertIt={this.convertArticle.bind(this)} exportOptions={exportOptions} topStoryMode={this.state.topStoryMode} toggleConvert={this.toggleConvert.bind(this)} isConverting={this.state.isConverting} isGuest={this.state.isGuest} toggleMembersOnly={this.toggleMembersOnly.bind(this)} onSortEnd={this.onSortEnd.bind(this)} addIt={this.postUserLink.bind(this)} />
+
+							<ArticleList articles={this.state.library} user={this.state.user} deleteIt={this.deleteArticle.bind(this)} convertIt={this.convertArticle.bind(this)} exportOptions={exportOptions} topStoryMode={this.state.topStoryMode} toggleConvert={this.toggleConvert.bind(this)} isConverting={this.state.isConverting} isGuest={this.state.isGuest} toggleMembersOnly={this.toggleMembersOnly.bind(this)} onSortEnd={this.onSortEnd.bind(this)} addIt={this.postUserLink.bind(this)} />
 						</ToggleDisplay>
 
 						<ToggleDisplay show={this.state.topStoryMode}>

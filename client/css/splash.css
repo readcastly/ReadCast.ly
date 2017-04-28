@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Global styles
+   ========================================================================== */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 900px;
+  }
+}
+body {
+  font-family: Dosis, sans-serif;
+  font-size: 16px;
+  color: #929496;
+}
+section {
+  padding: 50px;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+h1 {
+  font-size: 60px;
+  color: #6d3f96;
+  margin: 0 0 30px 0;
+}
+h2 {
+  font-size: 32px;
+  color: #6d3f96;
+}
+p {
+  margin-bottom: 20px;
+}
+.footer {
+  text-align: center;
+  margin-bottom: 15px;
+}
+a {
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  text-decoration: none;
+  color: #231f20;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+::selection {
+  background: #231f20; /* Safari */
+  color: #FFFFFF;
+}
+::-moz-selection {
+ background: #231f20; /* Firefox */
+ color: #FFFFFF;
+}
+
+/*-----------------Buttons------------------*/
+
+
+.btn-primary {
+  background-color: #70cbce;
+  color: #fff;
+  border: 0;
+  text-transform: uppercase;
+}
+.btn-primary:hover {
+  background-color: rgba(112, 203, 206, .9);
+  color: #fff;
+}
+.btn-secondary {
+  background-color: #6d3f96;
+  color: #fff;
+  border: 0;
+  text-transform: uppercase;
+}
+.btn-secondary:hover {
+  background-color: rgba(109, 63, 150, .9);
+  color: #fff;
+}
+.btn-tertiary {
+  background-color: #fff;
+  color: #6d3f96;
+  border: 0;
+  text-transform: uppercase;
+}
+.btn-tertiary:hover {
+  background-color: rgba(255, 255, 255, .9);
+  color: #6d3f96;
+}
+
+/*-----------------Colors------------------*/
+
+.black {
+  color: #231f20;
+}
+.blue {
+  color: #70cbce;
+}
+.white {
+  color: #ffffff;
+}
+.purple {
+  color: #6d3f96;
+}
+.yellow {
+  color: #fdc05d;
+}
+.black-bg {
+  background: #231f20;
+}
+.blue-bg {
+  background: #70cbce;
+}
+.white-bg {
+  background: #ffffff;
+}
+.purple-bg {
+  background: #6d3f96;
+}
+.yellow-bg {
+  background: #fdc05d;
+}
+
+/* ==========================================================================
+   Main styles
+   ========================================================================== */
+header {
+  background: url('../images/newspaper.jpg') no-repeat center center;
+  width: 100%;
+  padding: 20px 10px 60px 10px;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+.logo {
+  padding-top: 100px;
+}
+.form-group {
+  margin: 10px;
+}
+@keyframes scrolling {
+  0% {
+   opacity: 0;
+   top: 5px;
+  }
+  30% {
+   opacity: 1;
+   top: 10px;
+  }
+  100% {
+   opacity: 0;
+   top: 25px;
+  }
+}
+#app-demo {
+  background: url(../images/backkk2.png) #231f20 no-repeat center center fixed;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+hr {
+  width: 100%;
+  height: 2px;
+  margin-top: 50px;
+}
+#team {
+  background: #70cbce;
+}
+#team .portfolio {
+  text-align: center;
+}
+#team .fa {
+  color: #fff;
+  padding: 5px;
+}
+#team .fa:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   Mobile styles
+   ========================================================================== */
+@media (max-width: 480px) {
+  section {
+    padding: 30px;
+  }
+  h1 {
+    font-size: 48px;
+    line-height: 54px;
+  }
+  .logo {
+    margin-top: 0px;
+  }
+}

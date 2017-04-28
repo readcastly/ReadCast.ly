@@ -79,7 +79,8 @@ class Splash extends React.Component {
     <div>
      <link rel="stylesheet" href="css/font-awesome.min.css"/>
      <link rel="stylesheet" href="css/animate.css"/>
-     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"></link>
+    //  <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,700' rel='stylesheet' type='text/css'/>
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"></link>
      <script src="js/modernizr-2.7.1.js"></script>
      <link rel="stylesheet" href="css/main.css"/>
       <header>

@@ -173,7 +173,7 @@ class Splash extends React.Component {
             <div className="row">
               <div className="col-md-12">
                 <div className="fadeInUp">
-                  <div className="fadeInUp"> <img className="img-responsive" src="../images/team-big-2.jpg"/> </div>
+                  <div className="fadeInUp"> <img className="img-responsive" src="../images/team-big.jpg"/> </div>
                 </div>
               </div>
               <div className="fadeInUp portfolio">
@@ -185,10 +185,10 @@ class Splash extends React.Component {
                   <a className="icon-space" href="https://github.com/yangalav"><i className="fa fa-github-square fa-3x"></i></a> <a href="https://www.linkedin.com/in/viswadayangala/"><i className="fa fa-linkedin-square fa-3x"></i></a> </div>
                 <div className="col-sm-3 col-xs-6">
                   <h3 className="white">John Packel </h3>
-                  <a className="icon-space" href="https://github.com/john-packel"><i className="fa fa-github-square fa-3x"></i></a> <a className="icon-space" href="www.linkedin.com/in/johnpackel"><i className="fa fa-linkedin-square fa-3x"></i></a> <a href="https://twitter.com/jpackel"><i className="fa fa-twitter-square fa-3x"></i></a> </div>
+                  <a className="icon-space" href="https://github.com/john-packel"><i className="fa fa-github-square fa-3x"></i></a> <a className="icon-space" href="https://www.linkedin.com/in/johnpackel/"><i className="fa fa-linkedin-square fa-3x"></i></a> <a href="https://twitter.com/jpackel"><i className="fa fa-twitter-square fa-3x"></i></a> </div>
                 <div className="col-sm-3 col-xs-6">
                   <h3 className="white">Andrew Fechner </h3>
-                  <a className="icon-space" href="hhttps://github.com/arfnj"><i className="fa fa-github-square fa-3x"></i></a> <a href="https://www.linkedin.com/in/andrew-fechner/"><i className="fa fa-linkedin-square fa-3x"></i></a> </div>
+                  <a className="icon-space" href="https://github.com/arfnj"><i className="fa fa-github-square fa-3x"></i></a> <a href="https://www.linkedin.com/in/andrew-fechner/"><i className="fa fa-linkedin-square fa-3x"></i></a> </div>
               </div>
             </div>
           </div>

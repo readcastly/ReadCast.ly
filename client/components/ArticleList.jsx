@@ -44,7 +44,7 @@
 		return (
 			<Grid className='article-list'>
 				{props.articles.map((article) => (
-					<ArticleEntry key={article.id} article={article} user={props.user} exportOptions={props.exportOptions} deleteIt={props.deleteIt} convertIt={props.convertIt} topStoryMode={props.topStoryMode} toggleConvert={props.toggleConvert} isConverting={props.isConverting} isGuest={props.isGuest} toggleMembersOnly={props.toggleMembersOnly} />
+					<ArticleEntry key={article.id} article={article} user={props.user} exportOptions={props.exportOptions} deleteIt={props.deleteIt} convertIt={props.convertIt} topStoryMode={props.topStoryMode} toggleConvert={props.toggleConvert} isConverting={props.isConverting} isGuest={props.isGuest} toggleMembersOnly={props.toggleMembersOnly} addIt={props.addIt} />
 				))}
 			</Grid>
 		);

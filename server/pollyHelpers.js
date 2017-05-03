@@ -1,18 +1,18 @@
 /* pollyHelpers.js: a file of helper methods used in pollyController.js */
 
-// function to convert hexadecimal character codes into their character equivalents; 
+// function to convert hexadecimal character codes into their character equivalents;
 const unescapeTextAgain = function(unsafe) {
   return unsafe
-    .replace(/&quot;/g, "\"")    
-    .replace(/&apos;/g, "\'") 
-    .replace(/&amp;/g, "and") 
+    .replace(/&quot;/g, "\"")
+    .replace(/&apos;/g, "\'")
+    .replace(/&amp;/g, "and")
     .replace(/\)(\w)/g, "\) $1")
     .replace(/\.([A-Z])/g, "\. $1")
     .replace(/(\w)(\<)/g, "$1 $2")
     .replace(/&#x22;/g, "\"")
     .replace(/&#x201(C|D);/g, "\"")
-    .replace(/&#x201(8|9);/g, "\'")    
-    .replace(/&#xA0;/g, " ")    
+    .replace(/&#x201(8|9);/g, "\'")
+    .replace(/&#xA0;/g, " ")
     .replace(/&#x2026;/g, "...")
     .replace(/&#?\w+;/g, "-") /* catch-all for other hex char patterns, replacing them with a "-" */
 }
@@ -46,7 +46,7 @@ const strHeadCleaner = (str) => {
   // console.log('result.length: ', result.length); /* FOR DEBUGGING */
   let startIndex = str.search(/\w/);
   (startIndex > 0) && (result = result.slice(startIndex));
-  // console.log('startIndex: ', startIndex); /* FOR DEBUGGING */ 
+  // console.log('startIndex: ', startIndex); /* FOR DEBUGGING */
   return result;
 }
 
@@ -73,4 +73,3 @@ module.exports = {
   arrHeadCleaner,
   titleAbbreviator
 };
-

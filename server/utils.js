@@ -7,7 +7,7 @@ const errors = {
     mercuryCantParse: {"error": "The URL submitted is malformed. Please check that it does not have any extra characters on the front or back (e.g., a quotation mark) and resubmit the URL."},
     mercuryTransmission: {"error": "An error occurred while transmitting the url to web parser"},
     mercuryTimeout: {"error": "The requested url could not be parsed within 10 seconds, and timed out"},
-    audioStreamError: {"error": "Our system is having problems processing that article"}    
+    audioStreamError: {"error": "Our system is having problems processing that article"}
 };
 
 const domainExtractor = function(url) {
@@ -37,7 +37,7 @@ const textInspector = function(dbContents) {
     url = entryObj.url;
     /* these calls should filter out occurrences of '&hellips; and other hex codes in user's readcast library' */
     entryObj.excerpt = unescapeHex(entryObj.excerpt);
-    entryObj.title = unescapeHex(entryObj.title); 
+    entryObj.title = unescapeHex(entryObj.title);
     entryObj.text = unescapeHex(entryObj.text);
     /* this will check for any remaining hex code offenders, and return them (for logging, etc.) */
     results = entryObj.text.match(pattern);
@@ -147,12 +147,13 @@ const postStripSpacing = function(textInput) {
 }
 
 const payloadBuilder = function(article){
+  let realThing = article.attributes ? article.attributes : article
   return {body: {
                   payload: {
                               userId: 99,
                               destination: 'stream',
                               voice: 'Joanna',
-                              article: article
+                              article: realThing
                             }
                 }
           };

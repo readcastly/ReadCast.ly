@@ -384,7 +384,8 @@ class App extends React.Component {
 	}
 
 	getHeadlines(source) {
-    console.log('GETTING HEADLINES')
+    console.log('GETTING HEADLINES');
+    this.setState({gettingHeadlines: true});
     axios.post('/topStories', {source: source, headlineMode: true})
       .then((res) => {
         // console.log('app.jsx l 388: getHeadlines(source); res = ', res);

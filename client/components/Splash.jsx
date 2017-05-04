@@ -173,7 +173,7 @@ class Splash extends React.Component {
             <div className="row">
               <div className="col-md-12">
                 <div className="fadeInUp">
-                  <div className="fadeInUp"> <img className="img-responsive" src="../images/team-big.jpg"/> </div>
+                  <div className="fadeInUp"> <img className="img-responsive" src="https://s3.amazonaws.com/readcastly-build-files/team-big.JPG"/> </div>
                 </div>
               </div>
               <div className="fadeInUp portfolio">

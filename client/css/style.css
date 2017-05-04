@@ -39,6 +39,12 @@
   padding-top: 6px !important;
 }
 
+.logo-carousel img {
+  width: auto;
+  height: 600px;
+  max-height: 600px;
+}
+
 hr {
   height: 2px !important;
   background: #077ac6;

@@ -14,7 +14,7 @@ const create = function(articleData,headlineMode,callback) {
   return new Article({url: articleData.url}).fetch()
     .then(function(found) {
       if (found) {
-        console.log('FOUND ==== ', found.id);
+        console.log('articlesController l 17: result of fetch: FOUND.id = ', found.id);
         if (headlineMode) {
           callback(found)
           exactFind = true;
@@ -100,4 +100,3 @@ module.exports= {
   getAll : getAll,
   deleteOne : deleteOne
 };
-

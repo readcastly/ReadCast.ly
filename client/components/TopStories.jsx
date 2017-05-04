@@ -17,7 +17,6 @@ class TopStories extends React.Component {
 
   handleSourceChange(source) {
     if(source.target.value !== 'banana') {
-      this.props.toggleHeadlines()
       this.props.getHeadlines(source.target.value);
       this.setState({source: source.target.data});
     }

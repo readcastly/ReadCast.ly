@@ -97,6 +97,8 @@ const textToSpeech = (req, res, callback) => {
 
   // turn string into array, in order to count words total
   var allText = articleTitle + '. ' + text;
+  allText = allText.split(' \n.').join(''); // to remove the " . " we were seeing
+  allText = allText.split(' .').join(''); // to remove the " . " we were seeing
   var allTextArray = allText.split(" ");
 
   // var roughWords = text.split(" ");
@@ -115,7 +117,7 @@ const textToSpeech = (req, res, callback) => {
 
   // ...Check length of desired text to send to Polly; If longer than 230 words, break up into subarrays.
   var textArray = pollyHelpers.chopper(allTextArray, allText, 200);
-  // var textArray = pollyHelpers.chopper(words, text, 230);  
+  // var textArray = pollyHelpers.chopper(words, text, 230);
 
   // ... clean the title, then add it to the front of textArray.
   var titleText = pollyHelpers.strHeadCleaner(articleTitle);

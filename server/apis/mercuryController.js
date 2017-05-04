@@ -26,8 +26,8 @@ const optionsBuilder = function(url) {
     };
 };
 
-/* for pattern DEBUGGING: 
- - checks for patterns and returns them in cache object; 
+/* for pattern DEBUGGING:
+ - checks for patterns and returns them in cache object;
  - is invoked within articleObjectFinisher and within parseAndSave */
 const patternSearch = function(str, pattern) {
   let cache = {};
@@ -55,7 +55,7 @@ const articleObjFinisher = function(obj,source) {
   // ...put strippedUnescapedText through another function to fix spacing issues
 
 
-  obj.text = utils.postStripSpacing( strippedUnescapedText );   
+  obj.text = utils.postStripSpacing( strippedUnescapedText );
   // log(line, 'articleObjFinisher-D -- postStripSpacing: ', obj.text); /* MH: DEBUGGING */
   let charzB = patternSearch(obj.text, /&#?\w+;/g); /* MH: DEBUGGING */
   // log(line, 'charz-B: ', charzB); /* MH: DEBUGGING */
@@ -63,7 +63,7 @@ const articleObjFinisher = function(obj,source) {
 
   obj.author = source.author || "Dave Winfield" // "Author not available";
   obj.publication_date = source.date_published;
-  obj.image = source.lead_image_url ||   "https://s3.amazonaws.com/readcastly-user-files/readcastly-logo.png";
+  obj.image = source.lead_image_url ||   "https://s3.amazonaws.com/readcastly-build-files/readcastly-logo.png";
   obj.excerpt = utils.unescapeHex(source.excerpt);
   obj.word_count = source.word_count;
   obj.est_time = source.word_count / 145; // based on 145 wpm avg. spoken speech
@@ -135,4 +135,3 @@ const parseAndSave = function(userId, url, headlineMode, callback){
 };
 
 module.exports = { parseAndSave : parseAndSave };
-

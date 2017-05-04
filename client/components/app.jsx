@@ -1,5 +1,8 @@
 // {'APP' component is a stateful, top-level component }
 
+  /* Line 447: trying reverting to before Sortable to test mobile. Was:
+   <SortableList articles={this.state.library} user={this.state.user} */
+
 import React from 'react';
 import axios from 'axios';
 import ToggleDisplay from 'react-toggle-display';
@@ -13,7 +16,8 @@ import HeaderNav from './Navbar.jsx';
 import SignupButton from './SignupButton.jsx';
 import SignUpForm from './SignupForm.jsx';
 import TransFormEr from './TransFormer.jsx';
-import SortableList from './ArticleList.jsx';
+// import SortableList from './ArticleList.jsx';
+import ArticleList from './ArticleList.jsx';
 import ArticleEntry from './ArticleEntry.jsx';
 import TopStories from './TopStories.jsx';
 import Player from './Player.jsx';
@@ -101,11 +105,11 @@ class App extends React.Component {
 	}
 
   getCurrentUser(){
-    console.log('jerry sucks');
+    console.log('app.js l 108: getCurrentUser()');
     return axios.get('/api/getUserInfo')
     .then((res) => {
-      console.log('Here is the current user data! : ');
-      console.log(res.data);
+      // console.log('Response received. Here is the current user data! : ');
+      // console.log(res.data); // we should only log user data when testing
       if(res.data !== "") {
         this.setState({
         user: {
@@ -136,7 +140,7 @@ class App extends React.Component {
 
 	// {for getting entire article list}
 	getReadingList() {
-    console.log('USER: ', this.state.user)
+    // console.log('USER: ', this.state.user); // // we should only log user data when testing
 		this.setState({ isLoading: true });
     console.log('this is the user id for libraryyyyy: ' + this.state.user.id)
 		axios.get('/getAll', {params: {userId: this.state.user.id} })
@@ -205,6 +209,7 @@ class App extends React.Component {
 // {for posting new links}
 	postUserLink(url) {
 		// this.setState({hasErrored: false, failMessage: ''});
+    console.log('app.jsx l 212: postUserLink(url); url = ', url);
 		if (!isValidUrl(url)) {
 			this.setState({ failMessage: ('Not a valid url: ' + url), hasErrored: true });
 			return;
@@ -326,11 +331,12 @@ class App extends React.Component {
 	}
 
 	getTopStoriesSources() {
+    this.setState({ isLoading: true });
     console.log('GETTING SOURCES')
 		axios.get('https://newsapi.org/v1/sources?language=en')
 			.then((res) => {
 				let options = res.data.sources.filter((source) => source.sortBysAvailable.indexOf("top") !== -1 && source.id !=="financial-times" && source.id !== "associated-press")
-				this.setState({topStoriesSources: options})
+				this.setState({topStoriesSources: options, isLoading: false})
 			})
 			.catch ((err) => console.log('ERROR GETTING TOP STORIES SOURCES', err))
 	}
@@ -378,22 +384,27 @@ class App extends React.Component {
 	}
 
 	getHeadlines(source) {
-    console.log('GETTING HEADLINES')
+    console.log('GETTING HEADLINES');
+    this.setState({gettingHeadlines: true});
     axios.post('/topStories', {source: source, headlineMode: true})
       .then((res) => {
+        // console.log('app.jsx l 388: getHeadlines(source); res = ', res);
         res.data.forEach((article) => {
+          // console.log('app.jsx l 319. in forEach. article = ', article);
           if (article.publication_date) {
             article.publication_date = this.cleanDate(article.publication_date);
+            // console.log('Clean article.publication_date = ', article.publication_date);
           }
           article.est_time = this.cleanTime(article.est_time);
            randomId++
            article.id = randomId;
+          //  console.log('article.est_time ... randomId = ', article.est_time, '...', randomId);
          });
         this.setState({ headlines: res.data}, function() {
           this.setState({gettingHeadlines: false});
         });
       })
-      .catch((err) => console.log('Unable to retrieve headlines', err));
+      .catch((err) => console.log('Unable to retrieve Top Stories headlines. Error: ', err));
   }
 
   onSortEnd ({oldIndex, newIndex}) {
@@ -437,10 +448,11 @@ class App extends React.Component {
 							{!this.state.hasLibrary &&
 								<div id='empty-library'>
 									<h2 style={{color: '#70cbce'}}>Your library is empty!</h2>
-									<h3 style={{color: '#e3deeb'}}>Head over to Top Stories mode to grab today's headlines</h3>
+									<h3 style={{color: '#e3deeb'}}>Head over to Top Stories mode to grab the latest headlines</h3>
 									<h3 style={{color: '#e3deeb'}}>or feed your own links into the form above</h3>
 								</div>}
-							<SortableList articles={this.state.library} user={this.state.user} deleteIt={this.deleteArticle.bind(this)} convertIt={this.convertArticle.bind(this)} exportOptions={exportOptions} topStoryMode={this.state.topStoryMode} toggleConvert={this.toggleConvert.bind(this)} isConverting={this.state.isConverting} isGuest={this.state.isGuest} toggleMembersOnly={this.toggleMembersOnly.bind(this)} onSortEnd={this.onSortEnd.bind(this)} addIt={this.postUserLink.bind(this)} />
+
+							<ArticleList articles={this.state.library} user={this.state.user} deleteIt={this.deleteArticle.bind(this)} convertIt={this.convertArticle.bind(this)} exportOptions={exportOptions} topStoryMode={this.state.topStoryMode} toggleConvert={this.toggleConvert.bind(this)} isConverting={this.state.isConverting} isGuest={this.state.isGuest} toggleMembersOnly={this.toggleMembersOnly.bind(this)} onSortEnd={this.onSortEnd.bind(this)} addIt={this.postUserLink.bind(this)} />
 						</ToggleDisplay>
 
 						<ToggleDisplay show={this.state.topStoryMode}>

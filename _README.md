@@ -23,3 +23,5 @@ ReadCast.ly was conceived, architected and built in 4 weeks as the thesis produc
 ReadCast.ly employs 4 APIs to pull data from 60+ news sources, parse the text, convert to mp3 audio and then store and stream from Amazon S3 to the in-app player. 
 
 The team also wrote custom algorithms to further cleanse the text and ensure a quality listening experience, and they built a flexible SQL database that enables powerful relational look-ups between users and their preferences, articles and news sources and audio file distribution methods.
+
+https://cloud.githubusercontent.com/assets/19581802/26006544/d3324dd2-370a-11e7-8f64-32bd76507b07.png

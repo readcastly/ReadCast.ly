@@ -1,10 +1,10 @@
 # ReadCast.ly - your reading backlog solved
 
-Do you have a reading list of articles that grows faster than you can keep up with? 
+_Do you have a reading list of articles that grows faster than you can keep up with?_
 
-Are you a fan of podcasts because they allow you do explore topics and learn fascinating things while on the go? 
+_Are you a fan of podcasts because they allow you do explore topics and learn fascinating things while on the go?_ 
 
-Is reading from a screen the last thing you want to do after a long day on your laptop, smartphone and other devices? 
+_Is reading from a screen the last thing you want to do after a long day on your laptop, smartphone and other devices?_ 
 
 ## Give your eyes a break and your ears a treat!
 

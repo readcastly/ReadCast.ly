@@ -18,7 +18,7 @@ ReadCast.ly allows you to drop in URLs or select articles from 60+ global source
 
 ## The Team and tech stack:
 
-ReadCast.ly was conceived, architected and built in 4 weeks as the thesis product of four full-stack software engineers at Hack Reactor in New York City: Michiya Hibino, Viswada Yangala, John Packel and Andrew Fechner. 
+######ReadCast.ly was conceived, architected and built in 4 weeks as the thesis product of four full-stack software engineers at Hack Reactor in New York City: Michiya Hibino, Viswada Yangala, John Packel and Andrew Fechner. ######
 
 ReadCast.ly employs 4 APIs to pull data from 60+ news sources, parse the text, convert to mp3 audio and then store and stream from Amazon S3 to the in-app player. 
 

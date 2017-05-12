@@ -26,6 +26,4 @@ The team also wrote custom algorithms to further cleanse the text and ensure a q
 
 ![ScreenShot](https://cloud.githubusercontent.com/assets/19581802/26006671/5208f2aa-370b-11e7-9380-2fd94edd14dd.png)
 
-  <content>
-<snippet>
 

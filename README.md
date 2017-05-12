@@ -10,11 +10,11 @@ _Is reading from a screen the last thing you want to do after a long day on your
 
 ReadCast.ly allows you to drop in URLs or select articles from 60+ global sources - including news, entertainment, business, sports the arts and more - and listen to the content in your choice of 16 female and male voices, read to you with the natural-language text-to-speech technology Amazon has spent years developing.
 
-Easily toggle between views of your ReadCasts and Top Stories, listening to what you want and saving the rest in your library for later. 
+* Easily toggle between views of your ReadCasts and Top Stories, listening to what you want and saving the rest in your library for later. 
 
-Want to share your favorite ReadCasts with a friend? ReadCast.ly can also give you a link to stream the ReadCast. Or better yet, register for the app and add the ability to send an mp3 file via email or text. 
+* Want to share your favorite ReadCasts with a friend? ReadCast.ly can also give you a link to stream the ReadCast. Or better yet, register for the app and add the ability to send an mp3 file via email or text. 
 
-Have lots of ReadCasts in your queue? Use the search box to filter your results and find all the articles on Bitcoin or Bowie.
+* Have lots of ReadCasts in your queue? Use the search box to filter your results and find all the articles on Bitcoin or Bowie.
 
 ## The Team and tech stack:
 

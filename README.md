@@ -24,3 +24,4 @@ ReadCast.ly employs 4 APIs to pull data from 60+ news sources, parse the text, c
 
 The team also wrote custom algorithms to further cleanse the text and ensure a quality listening experience, and they built a flexible SQL database that enables powerful relational look-ups between users and their preferences, articles and news sources and audio file distribution methods.
 
+![ScreenShot](https://cloud.githubusercontent.com/assets/19581802/26006671/5208f2aa-370b-11e7-9380-2fd94edd14dd.png)
